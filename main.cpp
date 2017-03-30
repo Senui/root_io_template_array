@@ -6,6 +6,9 @@ int main(void) {
   c.set_arrayB({{B(1), B(2), B(3)}});
   c.set_vectorA({{A<int>(1), A<int>(2), A<int>(3)}});
 
+  std::cout << "Class A is the class template." << std::endl;
+  std::cout << "Class B is the regular class. " << std::endl;
+
   TFile *write = new TFile("myfile.root", "RECREATE");
   write->WriteObject(&c, "objname");
   write->Close();
